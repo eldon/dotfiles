@@ -1,16 +1,20 @@
 " display options {
     syntax on               "syntax coloring is a first-cut debugging tool
-    "colorscheme tomorrownight "change to taste. try `desert' or `evening'
+    colorscheme koehler "change to taste. try `desert' or `evening'
 
     set wrap                "wrap long lines
     set scrolloff=3         "keep three lines visible above and below
     set ruler showcmd       "give line, column, and command in the status line
     set laststatus=2        "always show the status line
                             "make filename-completion more terminal-like
-    set wildmode=longest:full
+    set wildmode=longest,list,full
     set wildmenu            "a menu for resolving ambiguous tab-completion
                             "files we never want to edit
     set wildignore=*.pyc,*.sw[pno],.*.bak,.*.tmp
+
+    set lazyredraw          "only redraw when we need to
+
+    set number              "draw line numbers
 " }
 
 " searching {
@@ -18,6 +22,8 @@
     set hlsearch            "highlight the search
     set ignorecase          "ignore case
     set smartcase           " ...unless the search uses uppercase letters
+    " This unsets the last search pattern register by hitting return
+    nnoremap <CR> :noh<CR><CR>
 
     "Use case-sensitive search for the * command though.
     :nnoremap * /\<<C-R>=expand('<cword>')<CR>\>\C<CR>
@@ -42,6 +48,8 @@
     "Bind the 'old' up and down. Use these to skip past a very long line.
     noremap gj j
     noremap gk k
+
+    set backspace=2             "make backspace work like most other apps
 " }
 
 " general usability {
@@ -84,8 +92,8 @@
     " be smarter about multiple buffers / vim instances
     "quick buffer switching with TAB, even with edited files
     set hidden
-    nmap <TAB> :bn<CR>
-    nmap <S-TAB> :bp<CR>
+    "nmap <TAB> :bn<CR>
+    "nmap <S-TAB> :bp<CR>
     set autoread            "auto-reload files, if there's no conflict
     set shortmess+=IA       "no intro message, no swap-file message
 
@@ -107,6 +115,7 @@
 "indentation options {
     set expandtab                       "use spaces, not tabs
     set softtabstop=4 shiftwidth=4      "4-space indents
+    set tabstop=4                       "number of visual spaces per TAB
 
 
     set shiftround                      "always use a multiple of 4 for indents
