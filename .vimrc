@@ -1,3 +1,22 @@
+" Let's get ready for Vundle!
+set nocompatible              " be iMproved, required
+filetype off                  " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" Alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'puppetlabs/puppetsyntax'
+Plugin 'scrooloose/syntastic'
+
+" all of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
 " display options {
     syntax on               "syntax coloring is a first-cut debugging tool
     colorscheme koehler "change to taste. try `desert' or `evening'
@@ -7,6 +26,8 @@
     set ruler showcmd       "give line, column, and command in the status line
     set laststatus=2        "always show the status line
                             "make filename-completion more terminal-like
+
+    set autochdir           "automatically change working directory
     set wildmode=longest,list,full
     set wildmenu            "a menu for resolving ambiguous tab-completion
                             "files we never want to edit
@@ -147,17 +168,6 @@
 
         "show me the top of the "new" file
         autocmd VimEnter * normal lgg
-    endif
-" }
-
-" Pathogen: {
-    " keep plugins nicely bundled in separate folders.
-    " http://www.vim.org/scripts/script.php?script_id=2332
-    runtime autoload/pathogen.vim
-    if exists('g:loaded_pathogen')
-        call pathogen#infect()    "load the bundles, if possible
-        Helptags                  "plus any bundled help
-        runtime bundle_config.vim "give me a chance to configure the plugins
     endif
 " }
 
