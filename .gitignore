@@ -9,7 +9,6 @@
 !docs
 !trees
 !.vim
-.netrwhist
 !.ssh
 !.bash_completion.d
 !.subversion

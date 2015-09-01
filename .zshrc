@@ -93,8 +93,3 @@ export ARCHFLAGS="-arch x86_64"
 if [ ~/.zshrc_private ] ; then
     source ~/.zshrc_private
 fi
-
-if [ -d ~/bin ] ; then
-    export PATH=~/bin:"${PATH}"
-fi
-
