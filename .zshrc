@@ -6,6 +6,11 @@ if [ -d ~/bin ] ; then
     export PATH=~/bin:"${PATH}"
 fi
 
+# source private zshrc if it exists
+if [ -e ~/.zshrc_private ] ; then
+    source ~/.zshrc_private
+fi
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -88,8 +93,3 @@ export ARCHFLAGS="-arch x86_64"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-. ~/bin/z.sh
-
-if [ ~/.zshrc_private ] ; then
-    source ~/.zshrc_private
-fi
