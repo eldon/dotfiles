@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/nail/home/eldon/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/bin ] ; then
