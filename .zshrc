@@ -63,7 +63,9 @@ plugins=(git z python sudo battery)
 
 # User configuration
 
-export PATH="/nail/home/eldon/bin:/opt/rbenv/bin:/nail/home/eldon/bin:/opt/rbenv/bin:/nail/sys/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/nail/workflow:/nail/scripts"
+if [ -e /nail ]; then
+    export PATH="$PATH:/nail/workflow:/nail/scripts"
+fi
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
