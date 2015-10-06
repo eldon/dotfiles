@@ -27,7 +27,7 @@ filetype plugin indent on    " required
     set laststatus=2        "always show the status line
                             "make filename-completion more terminal-like
 
-    set autochdir           "automatically change working directory
+    "set autochdir           "automatically change working directory
     set wildmode=longest,list,full
     set wildmenu            "a menu for resolving ambiguous tab-completion
                             "files we never want to edit

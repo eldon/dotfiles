@@ -61,8 +61,10 @@ ZSH_THEME="lukerandall"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git z python sudo battery)
 
-# User configuration
+# set dircolors
+eval "$(dircolors -b)"
 
+# User configuration
 if [ -e /nail ]; then
     export PATH="$PATH:/nail/workflow:/nail/scripts"
 fi
@@ -82,9 +84,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
