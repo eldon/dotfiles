@@ -100,6 +100,7 @@ export ARCHFLAGS="-arch x86_64"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias shipit="git push"
+alias rsync="rsync -Pav $@"
 alias git-shove="git push --force"
 
 # Set some environment vars
