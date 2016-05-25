@@ -72,3 +72,5 @@ export CLICOLOR=1
 alias ll='ls -lAGph'
 
 # vim:et:sw=2:sts=2:
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
