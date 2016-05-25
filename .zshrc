@@ -104,3 +104,6 @@ alias rsync="rsync -Pav $@"
 
 # Set some environment vars
 export LESS="-XLFR"
+
+# Use FZF (fuzzy find)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
