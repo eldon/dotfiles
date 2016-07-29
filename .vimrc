@@ -125,6 +125,9 @@ filetype plugin indent on    " required
     "replacement for CTRL-I, also known as <tab>
     noremap <C-P> <C-I>
 
+    "close a buffer without closing a window
+    nnoremap <C-d> :bp\|bd #<CR>
+
     "window switching: ctrl+[hjkl]
     nnoremap <C-J> <C-W>j
     nnoremap <C-K> <C-W>k
