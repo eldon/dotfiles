@@ -1,0 +1,9 @@
+[user]
+	email = eschoop@berkeley.edu
+	name = Eldon Schoop
+[core]
+	editor = /usr/bin/vim
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
