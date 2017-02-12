@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
+export PATH=/usr/local:"${PATH}"
+
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/bin ] ; then
     export PATH=~/bin:"${PATH}"
@@ -101,6 +103,7 @@ export ARCHFLAGS="-arch x86_64"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias shipit="git push"
 alias rsync="rsync -Pav $@"
+alias update-packages="sudo sh -c 'apt-get update && apt-get upgrade -y && apt-get autoremove -y'"
 
 # Set some environment vars
 export LESS="-XLFR"
