@@ -93,6 +93,9 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
+# Use FZF (fuzzy find)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -101,12 +104,10 @@ export ARCHFLAGS="-arch x86_64"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias shipit="git push"
+alias shipit="git push origin HEAD"
 alias rsync="rsync -Pav $@"
 alias update-packages="sudo sh -c 'apt-get update && apt-get upgrade -y && apt-get autoremove -y'"
+alias vimmodified="git status --porcelain | grep ' M .*' | sed 's/.* //' | vimem"
 
 # Set some environment vars
 export LESS="-XLFR"
-
-# Use FZF (fuzzy find)
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
