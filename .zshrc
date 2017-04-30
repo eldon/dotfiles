@@ -105,7 +105,7 @@ export ARCHFLAGS="-arch x86_64"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias shipit="git push origin HEAD"
-alias rsync="rsync -Pavh $@"
+alias rsync="rsync -Pah $@"
 alias update-packages="sudo sh -c 'apt-get update && apt-get upgrade -y && apt-get autoremove -y'"
 alias vimmodified="git status --porcelain | grep ' M .*' | sed 's/.* //' | vimem"
 
