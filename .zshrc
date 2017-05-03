@@ -6,6 +6,11 @@ if [ -d ~/bin ] ; then
     export PATH=~/bin:"${PATH}"
 fi
 
+# set PATH so it includes anaconda if exists
+#if [ -d ~/anaconda/bin ] ; then
+#    export PATH=~/anaconda/bin:"${PATH}"
+#fi
+
 # source private zshrc if it exists
 if [ -e ~/.zshrc_private ] ; then
     source ~/.zshrc_private
@@ -68,7 +73,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git z python sudo)
 
 # set dircolors
-eval "$(dircolors -b)"
+# eval "$(dircolors -b)"
 
 # User configuration
 if [ -e /nail ]; then
@@ -104,6 +109,7 @@ export ARCHFLAGS="-arch x86_64"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias shipit="git push origin HEAD"
 alias rsync="rsync -Pav $@"
+alias clone-minimal="git clone --depth 1 $@"
 alias vimmodified="git status --porcelain | grep ' M .*' | sed 's/.* //' | vimem"
 
 # Set some environment vars
