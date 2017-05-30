@@ -13,8 +13,12 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'puppetlabs/puppetsyntax'
 Plugin 'scrooloose/syntastic'
+
+" install jsx syntax highlighting and enable for .js files too
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
