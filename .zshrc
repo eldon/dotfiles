@@ -115,6 +115,7 @@ alias rsync="rsync -Pah $@"
 alias update-packages="sudo sh -c 'apt-get update && apt-get upgrade -y && apt-get autoremove -y'"
 alias vimmodified="git status --porcelain | grep ' M .*' | sed 's/.* //' | vimem"
 alias vv="source v**/bin/activate"
+alias vvv="deactivate"
 
 # Set some environment vars
 export LESS="-XLFR"
