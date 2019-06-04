@@ -5,7 +5,7 @@ set -u
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Install FZF
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+git clone --single-branch --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
 # Install oh my zsh

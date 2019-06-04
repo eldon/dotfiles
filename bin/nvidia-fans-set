@@ -1,0 +1,17 @@
+#/bin/bash
+
+set -eu
+
+FAN_SPEED=${1:-80}
+GPU_SELECT=${2:-""}
+
+if [ -z $GPU_SELECT ]  # GPU_SELECT is unset, change all the GPUs to FAN_SPEED
+then
+	for i in $(seq 0 3)
+	do
+		nvidia-settings -a "[gpu:$i]/GPUFanControlState=1" -a "[fan:$i]/GPUTargetFanSpeed=$FAN_SPEED"
+	done
+else
+	nvidia-settings -a "[gpu:$GPU_SELECT]/GPUFanControlState=1" -a "[fan:$GPU_SELECT]/GPUTargetFanSpeed=$FAN_SPEED"
+fi
+
