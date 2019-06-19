@@ -1,0 +1,2 @@
+#!/bin/bash
+exec sudo DISPLAY=:0 XAUTHORITY=/run/user/121/gdm/Xauthority $@
