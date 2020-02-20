@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -eu
+
+FAN_SPEED=${1:-""}
+
+if [ -z $FAN_SPEED ]
+then
+    nvidia-settings -a "GPUFanControlState=0"
+else
+    nvidia-settings -a "GPUFanControlState=1" -a "GPUTargetFanSpeed=$FAN_SPEED"
+fi
+

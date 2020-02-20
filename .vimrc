@@ -13,7 +13,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 
 " install jsx syntax highlighting and enable for .js files too
 Plugin 'pangloss/vim-javascript'

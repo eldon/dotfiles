@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+
+from __future__ import print_function
+import json
+import sys
+
+def main(jfile, indent):
+    j = None
+    with open(jfile, 'r') as f:
+        j = json.load(f)
+
+    with open(jfile, 'w') as f:
+        json.dump(j, f, indent=indent)
+
+if __name__ == '__main__':
+    try:
+        jfile = sys.argv[1].strip()
+    except IndexError:
+        print('Usage: pprint-json file.json [indent]')
+        exit(-1)
+
+    try:
+        indent = int(sys.argv[2])
+    except IndexError, TypeError:
+        indent = 2
+
+    main(jfile, indent)

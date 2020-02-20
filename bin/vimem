@@ -1,0 +1,1 @@
+xargs --replace sh -c 'vim {} < /dev/tty'
