@@ -95,9 +95,6 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
-export ARCHFLAGS="-arch x86_64"
-
 # Use FZF (fuzzy find)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
