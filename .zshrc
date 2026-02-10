@@ -1,21 +1,22 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
+# source private zshrc if it exists
+if [ -e ~/.zshrc_private ] ; then
+    source ~/.zshrc_private
+fi
+
 export PATH=/usr/local:"${PATH}"
+export PATH=/usr/.local/bin:"${PATH}"
+
+# add homebrew bin if exists
+if [ -d /opt/homebrew/bin ]; then
+    export PATH="/opt/homebrew/bin/:$PATH"
+fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/bin ] ; then
     export PATH=~/bin:"${PATH}"
-fi
-
-# set PATH so it includes anaconda if exists
-#if [ -d ~/anaconda/bin ] ; then
-#    export PATH=~/anaconda/bin:"${PATH}"
-#fi
-
-# source private zshrc if it exists
-if [ -e ~/.zshrc_private ] ; then
-    source ~/.zshrc_private
 fi
 
 # Set name of the theme to load.
@@ -77,12 +78,6 @@ plugins=(git z python sudo)
 # set dircolors
 # eval "$(dircolors -b)"
 
-# User configuration
-if [ -e /nail ]; then
-    export PATH="$PATH:/nail/workflow:/nail/scripts"
-fi
-# export MANPATH="/usr/local/man:$MANPATH"
-
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -103,16 +98,17 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias shipit="git push origin HEAD"
 alias clone-minimal="git clone --single-branch --depth 1 $@"
-alias rsync="rsync -Pah $@"
 alias update-packages="sudo sh -c 'apt update && apt upgrade -y && apt autoremove -y --purge'"
 alias vimmodified="git status --porcelain | grep ' M .*' | sed 's/.* //' | vimem"
 alias vv="source v**/bin/activate"
+alias .vv="source .v**/bin/activate"
 alias vvv="deactivate"
+alias ll='ls -lAGph'
 
 # Set some environment vars
 export LESS="-XLFR"
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export CLICOLOR=1
+

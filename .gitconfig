@@ -9,3 +9,6 @@
 	prompt = false
 [push]
 	default = simple
+	autoSetupRemote = true
+[pull]
+	rebase = false
