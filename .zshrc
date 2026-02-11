@@ -102,8 +102,7 @@ alias shipit="git push origin HEAD"
 alias clone-minimal="git clone --single-branch --depth 1 $@"
 alias update-packages="sudo sh -c 'apt update && apt upgrade -y && apt autoremove -y --purge'"
 alias vimmodified="git status --porcelain | grep ' M .*' | sed 's/.* //' | vimem"
-alias vv="source v**/bin/activate"
-alias .vv="source .v**/bin/activate"
+alias vv='source {.,}v*/bin/activate(N[1])'
 alias vvv="deactivate"
 alias ll='ls -lAGph'
 
@@ -111,4 +110,3 @@ alias ll='ls -lAGph'
 export LESS="-XLFR"
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export CLICOLOR=1
-
